@@ -3,6 +3,7 @@ package com.glomaksi.pizzashopbackend.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -16,8 +17,8 @@ import java.util.Set;
 @NoArgsConstructor
 public class Category {
     @Id
-    @GeneratedValue
-    @Column(name = "category_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "category_id", nullable = false)
     private long id;
 
     @Column(name = "category_name", nullable = false)

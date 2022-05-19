@@ -14,8 +14,8 @@ import java.util.Set;
 @NoArgsConstructor
 public class Pizza {
     @Id
-    @GeneratedValue
-    @Column(name = "pizza_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "pizza_id", nullable = false)
     private Long id;
 
     @Column(name = "pizza_name", nullable = false)
