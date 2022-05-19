@@ -2,11 +2,14 @@ package com.glomaksi.pizzashopbackend.service.category;
 
 import com.glomaksi.pizzashopbackend.dto.category.CategoryRequestDto;
 import com.glomaksi.pizzashopbackend.entity.Category;
+import com.glomaksi.pizzashopbackend.entity.Pizza;
 import com.glomaksi.pizzashopbackend.exception.alreadyexist.CategoryAlreadyExistException;
 import com.glomaksi.pizzashopbackend.exception.notfound.CategoryNotFoundException;
 import com.glomaksi.pizzashopbackend.repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.Hibernate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
