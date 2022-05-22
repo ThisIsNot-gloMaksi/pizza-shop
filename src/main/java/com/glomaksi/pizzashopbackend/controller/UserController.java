@@ -25,12 +25,12 @@ public class UserController {
     }
 
     @PostMapping("/admin/users")
-    public User createAdmin(UserRequestDto userRequestDto) {
+    public User createAdmin(@RequestBody UserRequestDto userRequestDto) {
         return userService.createAdmin(userRequestDto.getUsername(), userRequestDto.getPassword());
     }
 
     @PostMapping("/users")
-    public User createSimpleUser(UserRequestDto userRequestDto) {
+    public User createSimpleUser(@RequestBody UserRequestDto userRequestDto) {
         return userService.createSimpleUser(userRequestDto.getUsername(), userRequestDto.getPassword());
     }
 

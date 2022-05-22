@@ -46,6 +46,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User getUserByName(String name) {
+        return userRepository.getUserByUsername(name)
+                .orElseThrow(
+                        () -> {
+                            throw UserNotFoundException.createForName(name);
+                        }
+                );
+    }
+
+    @Override
     public User createSimpleUser(String username, String password) {
         return templateCreateUser(username, password, userFactory);
     }

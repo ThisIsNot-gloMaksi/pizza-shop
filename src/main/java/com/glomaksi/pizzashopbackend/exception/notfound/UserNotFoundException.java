@@ -13,4 +13,8 @@ public class UserNotFoundException extends ItemNotFoundException {
     public static UserNotFoundException createForId(Long id) {
         return new UserNotFoundException(String.format("not found user with id=%d", id));
     }
+
+    public static UserNotFoundException createForName(String name) {
+        return new UserNotFoundException(String.format("not found user with name=%s", name));
+    }
 }
